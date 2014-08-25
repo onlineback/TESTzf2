@@ -1,0 +1,45 @@
+<?php
+$this->headTitle($this->post->getContentCorto() . ' | Café de Villa Rica');
+$this->headMeta()->appendName('keywords', 'Café, Cafe, Café Tostado, Café Molido, Café arábigo, Café Grano Verde,Café Tostado, Taza de Café,cafe, cafe tostado, cafe en grano, cafe marca propia, licor de cafe, crema de cafe, licor, tienda en línea de café, coffee online store');
+$this->headMeta()->appendName('description', 'Omagua ofrece Café de Villa Rica , Café Tostado, Café Molido, Café Arábigo, Café en Grano, Café Grano Verde');
+?>
+<div id="content">
+    <div id="content-inside">			
+        <div id="posts">
+
+            <div class="post-93 post type-post status-publish format-standard hentry category-lunch-menu category-lunch-specials category-our-menu category-our-specials post-item single-post-item" id="post-93">
+                <div class="post-details">
+                    <div class="post-thumbnail">
+                        <a title="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" href="#">
+                            <img width="350" height="350" alt="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" class="attachment-featured wp-post-image" src="<?php echo  $this->post->getIcon() ?>" style="opacity: 1;">
+                        </a>
+                    </div>
+
+                    <h2><a title="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" href="#"><?php echo  $this->post->getTitle() ?></a></h2>
+                    <p>
+                        <?php echo  $this->post->getContent() ?>
+                    </p>
+                </div>
+            </div> <!-- post-item -->
+        </div> <!-- posts -->
+
+        <div id="sidebar">
+            <div class="widget">
+                <div id="featured-categories">
+                    <!-- featured category # -->						
+                    <?php if(!empty($this->postpages)): ?>
+                        <?php foreach($this->postpages as $value): ?>
+                            <?php $stricon = $value->getIcon(); ?>
+                            <?php $resp =  @end(explode('.', $value->getIcon()));$image = str_replace('.'.$resp, '-150x150.'.$resp, $stricon)?>
+                            <div class="featured-category">
+                                <a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('post/' . $value->getName()) ?>">
+                                    <img width="50" height="50" alt="<?php echo $value->getTitle() ?>" class="attachment-sidebar wp-post-image" src="<?php  echo $image ?>" style="opacity: 1;">							</a>
+                                <h3><?php echo $value->getTitle() ?></h3>
+                                <p><?php echo $value->getContentCorto() ?></p>
+                            </div>		
+                        <?php endforeach; ?>
+                    <?php endif; ?>                    		
+                </div> <!-- featured-categories -->
+            </div>
+        </div>
+</div>

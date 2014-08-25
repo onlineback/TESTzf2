@@ -1,0 +1,58 @@
+<?php 
+$this->headTitle('CafeOmagua : Café de Villa Rica, Café Tostado, Café Molido, Café arábigo, Café Grano Verde,Café marca propia');        
+$this->headMeta()->appendName('keywords', 'Café, Cafe,Café Omagua, CafeOmagua, Café Tostado, Café Molido, Café arábigo, Café Grano Verde,Café Tostado, Taza de Café,cafe, cafe tostado, cafe en grano, cafe marca propia, licor de cafe, crema de cafe, licor, tienda en línea de café, coffee online store' );
+$this->headMeta()->appendName('description', 'Omagua ofrece Café de Villa Rica , Café Tostado, Café Molido, Café Arábigo, Café en Grano, Café Grano Verde');
+?>
+<div id="content">
+    <div id="content-inside">
+        <div id="featured-posts">
+            <div id="coda-nav">
+                <div class="coda-slider" id="slider">
+                    <?php if(!empty($this->slide)): ?>
+                        <?php foreach($this->slide as $value): ?>
+                            <div class="panel">
+                                <div class="featured-post">
+                                    <a href="<?php echo $value->link  ?>" title="<?php echo $value->title  ?> - CafeOmagua">
+                                        <img width="650" height="350" src="<?php echo $value->url ?>" class="attachment-featured wp-post-image" alt="<?php echo $value->alt  ?> | CafeOmagua" style="opacity: 1;">								
+                                    </a>
+                                </div> <!-- featured-post -->
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div> <!-- coda-nav -->
+        </div> <!-- featured-posts -->
+        <div id="sidebar">
+            <div class="widget">
+                <div id="featured-categories">
+                    <!-- featured category # -->						
+                    <?php if(!empty($this->postpages)): ?>
+                        <?php foreach($this->postpages as $value): ?>
+                            <?php $stricon = $value->getIcon(); ?>
+                            <?php $resp =  @end(explode('.', $value->getIcon()));$image = str_replace('.'.$resp, '-150x150.'.$resp, $stricon)?>
+                            <div class="featured-category">
+                                <a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('post/' . $value->getName()) ?>">
+                                    <img width="50" height="50" alt="<?php echo $value->getTitle() ?>" class="attachment-sidebar wp-post-image" src="<?php  echo $image ?>" style="opacity: 1;">							</a>
+                                <h3><?php echo $value->getTitle() ?></h3>
+                                <p><?php echo $value->getTitleSeo() ?></p>
+                            </div>		
+                        <?php endforeach; ?>
+                    <?php endif; ?>                    		
+                </div> <!-- featured-categories -->
+            </div>
+        </div>
+        <!--<div id="sidebar">
+            <div class="widget">
+                <div class="fb-like-box" data-href="https://www.facebook.com/cafeomagua" data-width="230" data-height="370" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+            </div>
+        </div> <!-- sidebar -->		
+    </div> <!-- content-inside -->
+</div> <!-- content -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=199268470235559";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

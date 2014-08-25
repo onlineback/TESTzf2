@@ -1,0 +1,58 @@
+<?php
+$this->headTitle('Productos Café de Villa Rica');
+$this->headMeta()->appendName('keywords', 'Café, Cafe, Café Tostado, Café Molido, Café arábigo, Café Grano Verde,Café Tostado, Taza de Café,cafe, cafe tostado, cafe en grano, cafe marca propia, licor de cafe, crema de cafe, licor, tienda en línea de café, coffee online store');
+$this->headMeta()->appendName('description', 'Omagua ofrece Café de Villa Rica , Café Tostado, Café Molido, Café Arábigo, Café en Grano, Café Grano Verde');
+?>
+<div id="content">
+    <div id="content-inside">			
+        <div id="posts">
+             <?php if(!empty($this->postpages)): ?>
+            <?php foreach($this->postpages as $value): ?>
+                    <?php $stricon = $value->getIcon(); ?>
+                    <?php //$resp =  @end(explode('.', $value->getIcon()));$image = str_replace('.'.$resp, '-150x150.'.$resp, $stricon)?>
+                        <div id="post-112" class="post-112 post type-post status-publish format-standard hentry category-drinks category-our-menu post-item">			
+                            <div class="post-thumbnail">
+                                <a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('producto/' . $value->getName()) ?>">
+                                    <img width="350" height="350" src="<?php echo $stricon ?>" class="attachment-featured wp-post-image" alt="<?php echo $value->getTitle() ?>" style="opacity: 1;">
+                                </a>
+                            </div>
+                            <h2>
+                                <a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('producto/' . $value->getName()) ?>"><?php echo $value->getTitle() ?></a></h2>
+                            <p><?php echo $value->getDescription() ?></p>
+
+                            <div class="posted-in">
+                                <ul class="post-categories">
+                                    <li><a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('producto/' . $value->getName()) ?>">Ver mas...</a></li>                                
+                        </div> <!-- post-item -->
+                        </div>
+                 <?php endforeach; ?>
+            <?php endif; ?>
+        </div> <!-- posts -->
+
+        <div id="sidebar">
+            <div class="widget">
+                <div id="featured-categories">
+                    <!-- featured category # -->						
+                    <?php if(!empty($this->postpages)): ?>
+                        <?php foreach($this->postpages as $value): ?>
+                            <?php $stricon = $value->getIcon(); ?>
+                            <?php $resp =  @end(explode('.', $value->getIcon()));$image = str_replace('.'.$resp, '-150x150.'.$resp, $stricon)?>
+                            <div class="featured-category">
+                                <a title="<?php echo $value->getTitle() ?>" href="<?php echo $this->basePath('post/' . $value->getName()) ?>">
+                                    <img width="50" height="50" alt="<?php echo $value->getTitle() ?>" class="attachment-sidebar wp-post-image" src="<?php  echo $image ?>" style="opacity: 1;">							</a>
+                                <h3><?php echo $value->getTitle() ?></h3>
+                                <p><?php echo $value->getContentCorto() ?></p>
+                            </div>		
+                        <?php endforeach; ?>
+                    <?php endif; ?>                    		
+                </div> <!-- featured-categories -->
+            </div>
+            <div id="text-3" class="widget widget_text"><h3>CaféOmagua</h3>			
+                <div class="textwidget">
+                    OMAGUA le brinda la más fina selección de granos de café que le dan ese sabor, cuerpo, aroma y acidez inigualable; elaborado a base de la variedad arábica proveniente del fundo El Rosal, que se encuentra ubicado en la mejor zona cafetalera del Perú reconocida a nivel mundial, “Villa Rica”
+                </div>
+            </div>
+        </div>
+</div>
+
+    

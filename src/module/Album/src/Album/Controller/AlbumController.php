@@ -23,6 +23,10 @@ class AlbumController extends AbstractActionController {
 
     public function addAction()
     {
+//        $routeMatch = $event->getRouteMatch();
+//        $controller = $routeMatch->getParam('controller');
+         $params = $this->params()->fromRoute();
+        var_dump($params);
     }
 
     public function editAction()

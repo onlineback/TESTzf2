@@ -1,0 +1,28 @@
+<?php 
+$this->headTitle('Origen Café de Villa Rica');        
+$this->headMeta()->appendName('keywords', 'Café, Cafe, Café Tostado, Café Molido, Café arábigo, Café Grano Verde,Café Tostado, Taza de Café,cafe, cafe tostado, cafe en grano, cafe marca propia, licor de cafe, crema de cafe, licor, tienda en línea de café, coffee online store' );
+$this->headMeta()->appendName('description', 'Nuestra finca cultiva grandes hectáreas de café tipo arábica (100%) en sus tres variedades: típico, caturra y pache.');
+?>
+<div id="content">
+    <div id="content-inside">
+        <div id="posts-full">
+
+            <div class="single-post-item" id="post-87">
+                <h2><a title="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" href="#"><?php echo  $this->post->getTitle() ?></a></h2>
+
+                <div class="post-content post-content-full">
+                    <div>
+                    <?php echo  $this->post->getContent() ?>
+                   </div>
+                    <div style="text-align: center;width: 100%;display:block;" >
+                        <a style="margin: auto;" title="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" href="#">
+                            <img alt="<?php echo  $this->post->getTitle() ?> | Café de Villa Rica" class="attachment-featured wp-post-image" src="<?php echo  $this->post->getIcon() ?>" style="opacity: 1;">
+                        </a>
+                    </div>
+                </div> <!-- post-content -->
+                
+            </div> <!-- post-item -->
+
+        </div> <!-- posts-full -->
+    </div>
+</div> <!-- content -->
